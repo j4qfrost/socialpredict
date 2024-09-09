@@ -37,14 +37,9 @@ func Start() {
 	router.HandleFunc("/v0/home", handlers.HomeHandler)
 	router.HandleFunc("/v0/login", middleware.LoginHandler)
 
-<<<<<<< HEAD
-	// application setup information
-	router.HandleFunc("/v0/setup", setuphandlers.GetSetupHandler(setup.LoadEconomicsConfig)).Methods("GET")
-=======
 	// application setup and stats information
 	router.HandleFunc("/v0/setup", setuphandlers.GetSetupHandler(setup.LoadEconomicsConfig)).Methods("GET")
 	router.HandleFunc("/v0/stats", statshandlers.StatsHandler()).Methods("GET")
->>>>>>> 75a68ca7ca53589724e80d5291fa61bc3687fe54
 	// markets display, market information
 	router.HandleFunc("/v0/markets", marketshandlers.ListMarketsHandler).Methods("GET")
 	router.HandleFunc("/v0/markets/{marketId}", marketshandlers.MarketDetailsHandler).Methods("GET")
